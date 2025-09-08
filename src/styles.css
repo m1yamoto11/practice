@@ -1,172 +1,213 @@
 body {
     margin: 0;
-    padding: 20px;
+    padding: 0;
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    background-color: black;
+    color: white;
 }
 
 .header {
     background: white;
-    padding: 20px;
-    margin-bottom: 20px;
+    color: black;
+    padding: 15px;
+    text-align: center;
+    border-bottom: 2px solid black;
 }
 
 .nav__list {
     list-style: none;
     padding: 0;
     margin: 0;
+    text-align: center;
 }
 
 .nav__list li {
-    display: inline-block;
-    margin-right: 20px;
+    display: block;
+    margin-bottom: 10px;
+    border-bottom: 1px solid black;
+    padding: 10px;
 }
 
 .nav__link {
     text-decoration: none;
-    color: blue;
+    color: black;
+    font-size: 18px;
 }
 
 .nav__link:hover {
-    text-decoration: underline;
+    background: black;
+    color: white;
+    padding: 5px;
 }
 
 .nav__link--active {
-    color: darkblue;
+    color: gray;
     font-weight: bold;
 }
 
 .main {
     background: white;
-    padding: 20px;
-    margin-bottom: 20px;
+    color: black;
+    padding: 30px;
+    margin: 20px;
+    text-align: center;
 }
 
 .main__title {
     color: black;
-    font-size: 24px;
-    margin-bottom: 20px;
+    font-size: 28px;
+    margin-bottom: 30px;
+    text-align: left;
+    border-bottom: 2px solid black;
+    padding-bottom: 10px;
 }
 
 .main__text {
-    margin-bottom: 10px;
-    color: #666;
+    margin-bottom: 15px;
+    color: gray;
+    text-align: left;
+    font-size: 16px;
 }
 
 .footer {
     text-align: center;
-    color: #999;
+    color: white;
     font-size: 14px;
+    padding: 20px;
+    background: gray;
 }
 
 .footer__text {
-    margin: 5px 0;
+    margin: 10px 0;
 }
 
 .breadcrumb {
-    margin-bottom: 20px;
+    margin: 20px;
     font-size: 14px;
-    color: #999;
+    color: white;
+    background: gray;
+    padding: 10px;
 }
 
 .breadcrumb__link {
-    color: blue;
-    text-decoration: none;
+    color: white;
+    text-decoration: underline;
 }
 
 .breadcrumb__link:hover {
-    text-decoration: underline;
+    color: black;
+    background: white;
+    padding: 2px;
 }
 
 .breadcrumb__current {
     color: black;
+    background: white;
+    padding: 2px;
 }
 
 .content-section {
-    margin-bottom: 20px;
-    padding: 15px;
-    background: #f9f9f9;
-    border-left: 3px solid blue;
+    margin: 20px;
+    padding: 20px;
+    background: gray;
+    color: white;
+    border: 2px solid white;
 }
 
 .content-section__title {
-    margin: 0 0 10px 0;
-    color: black;
-    font-size: 18px;
+    margin: 0 0 15px 0;
+    color: white;
+    font-size: 20px;
+    text-align: center;
 }
 
 .content-section__text {
-    margin-bottom: 5px;
-    color: #666;
+    margin-bottom: 10px;
+    color: white;
+    text-align: left;
 }
 
 .button {
-    padding: 10px 20px;
-    border: none;
-    background: blue;
-    color: white;
+    padding: 15px 25px;
+    border: 2px solid black;
+    background: white;
+    color: black;
     cursor: pointer;
     font-size: 16px;
+    margin: 10px;
 }
 
 .button:hover {
-    background: darkblue;
+    background: black;
+    color: white;
 }
 
 .button--secondary {
     background: gray;
+    color: white;
+    border: 2px solid white;
 }
 
 .button--secondary:hover {
-    background: darkgray;
+    background: white;
+    color: black;
 }
 
 .dialog {
-    padding: 20px;
-    border: 1px solid #ccc;
+    padding: 30px;
+    border: 3px solid black;
     background: white;
-    max-width: 400px;
+    color: black;
+    max-width: 500px;
 }
 
 .dialog__title {
-    margin: 0 0 20px 0;
+    margin: 0 0 25px 0;
     color: black;
     text-align: center;
+    font-size: 22px;
+    border-bottom: 1px solid black;
+    padding-bottom: 10px;
 }
 
 .form__label {
     display: block;
-    margin: 10px 0 5px 0;
+    margin: 15px 0 8px 0;
     font-weight: bold;
     color: black;
+    font-size: 16px;
 }
 
 .form__input,
 .form__select,
 .form__textarea {
     width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
+    padding: 12px;
+    border: 2px solid black;
+    background: white;
+    color: black;
     font-size: 16px;
 }
 
 .form__input:focus,
 .form__select:focus,
 .form__textarea:focus {
-    border-color: blue;
+    background: gray;
+    color: white;
 }
 
 .form__help {
     font-size: 12px;
-    color: #999;
+    color: gray;
     margin-top: 5px;
 }
 
 .form__actions {
-    margin-top: 20px;
+    margin-top: 25px;
+    text-align: center;
 }
 
 .form__actions .button {
-    margin-right: 10px;
+    margin: 0 10px;
 }
 
