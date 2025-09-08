@@ -4,48 +4,78 @@
 <head>
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Мой первый проект</title>
+     <title>Форма обратной связи</title>
      <link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
-     <title>О нас - Название вашего сайта</title>
-     <meta name="description" content="Узнайте больше о нашей компании и истории">
+     <meta name="description" content="Наша компания - свяжитесь с нами через форму обратной связи">
+     <link rel="stylesheet" href="styles.css">
+     <script src="main.js" defer></script>
 </head>
 
 <body>
-     <header>
-          <nav>
-               <ul>
-                    <li><a href="index.html">Главная</a></li>
-                    <li><a href="about.html">О нас</a></li>
-                    <li><a href="contact.html">Контакты</a></li>
+     <header class="header">
+          <nav class="nav">
+               <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html" class="nav__link nav__link--active">Главная</a></li>
+                    <li class="nav__item"><a href="about.html" class="nav__link">О нас</a></li>
+                    <li class="nav__item"><a href="contact.html" class="nav__link">Контакты</a></li>
                </ul>
           </nav>
      </header>
 
-     <main>
-          <h1>Приветствуем вас на нашей платформе!</h1>
+     <main class="main">
+          <h1 class="main__title">Наша компания</h1>
+          <p class="main__text">Добро пожаловать на наш сайт!</p>
 
-          <section id="services">
-               <h2>Наши решения</h2>
-               <p>Подробная информация о предлагаемых сервисах...</p>
-               <a href="#contacts">Получить консультацию</a>
-          </section>
-
-          <section id="portfolio">
-               <h2>Кейсы</h2>
-               <p>Демонстрация успешных проектов...</p>
-          </section>
-
-          <section id="contacts">
-               <h2>Связь с нами</h2>
-               <p>Способы связи...</p>
-               <a href="contacts.html">Узнать больше</a>
-          </section>
+          <button id="openDialog" type="button" class="button button--primary">Написать нам</button>
      </main>
 
-     <footer>
-          <p>&copy; 2023 Наименование организации. Все права сохранены.</p>
-          <p>Телефон: +7 (123) 456-78-90</p>
+     <footer class="footer">
+          <p class="footer__text">&copy; 2023 Наименование организации. Все права сохранены.</p>
+          <p class="footer__text">Телефон: +7 (123) 456-78-90</p>
      </footer>
+
+     <dialog id="contactDialog" aria-labelledby="dialogTitle" class="dialog">
+          <h2 id="dialogTitle" class="dialog__title">Обратная связь</h2>
+
+          <form id="contactForm" method="dialog" novalidate class="form">
+
+               <label for="name" class="form__label">Имя</label>
+               <input id="name" name="name" type="text" required minlength="2" autocomplete="given-name"
+                    aria-describedby="nameHelp" class="form__input">
+               <small id="nameHelp" class="form__help">Минимум 2 символа</small>
+
+               <label for="email" class="form__label">E-mail</label>
+               <input id="email" name="email" type="email" required autocomplete="email" class="form__input">
+
+               <label for="phone" class="form__label">Телефон</label>
+               <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" aria-describedby="phoneHelp"
+                    placeholder="+7 (___) ___-__-__" required pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$"
+                    class="form__input">
+               <small id="phoneHelp" class="form__help">Формат: +7 (900) 000-00-00</small>
+
+               <label for="date" class="form__label">Дата желаемого контакта</label>
+               <input id="date" name="date" type="date" class="form__input">
+
+               <label for="topic" class="form__label">Тема обращения</label>
+               <select id="topic" name="topic" required class="form__select">
+                    <option value="">Выберите тему</option>
+                    <option value="question">Общий вопрос</option>
+                    <option value="order">Заказ услуги</option>
+                    <option value="complaint">Жалоба</option>
+                    <option value="suggestion">Предложение</option>
+               </select>
+
+               <label for="message" class="form__label">Сообщение</label>
+               <textarea id="message" name="message" rows="4" required aria-describedby="messageHelp"
+                    class="form__textarea"></textarea>
+               <small id="messageHelp" class="form__help">Опишите ваш вопрос подробно</small>
+
+               <div class="form__actions">
+                    <button type="button" id="closeDialog" class="button button--secondary">Закрыть</button>
+                    <button type="submit" class="button button--primary">Отправить</button>
+               </div>
+          </form>
+     </dialog>
 </body>
 
 </html>

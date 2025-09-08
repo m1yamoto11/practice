@@ -8,43 +8,44 @@
      <link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
      <title>О нас - Название вашего сайта</title>
      <meta name="description" content="Узнайте больше о нашей компании и истории">
+     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-     <header>
-          <nav>
-               <ul>
-                    <li><a href="index.html">Главная</a></li>
-                    <li><a href="about.html">О нас</a></li>
-                    <li><a href="contact.html">Контакты</a></li>
+     <header class="header">
+          <nav class="nav">
+               <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html" class="nav__link">Главная</a></li>
+                    <li class="nav__item"><a href="about.html" class="nav__link">О нас</a></li>
+                    <li class="nav__item"><a href="contact.html" class="nav__link nav__link--active">Контакты</a></li>
                </ul>
           </nav>
      </header>
 
-     <main>
-          <nav aria-label="Хлебные крошки">
-               <a href="index.html">Главная</a> →
-               <span>Контакты</span>
+     <main class="main">
+          <nav aria-label="Хлебные крошки" class="breadcrumb">
+               <a href="index.html" class="breadcrumb__link">Главная</a> →
+               <span class="breadcrumb__current">Контакты</span>
           </nav>
 
-          <h1>Как с нами связаться</h1>
-          <section>
-               <h2>Наши данные</h2>
-               <p>Телефон: +7 (495) 123-45-67</p>
-               <p>Email: info@mycompany.ru</p>
-               <p>Адрес: г. Москва, ул. Тверская, д. 15, офис 201</p>
-               <p>График работы: Пн-Пт с 9:00 до 18:00</p>
+          <h1 class="main__title">Как с нами связаться</h1>
+          <section class="content-section">
+               <h2 class="content-section__title">Наши данные</h2>
+               <p class="content-section__text">Телефон: +7 (495) 123-45-67</p>
+               <p class="content-section__text">Email: info@mycompany.ru</p>
+               <p class="content-section__text">Адрес: г. Москва, ул. Тверская, д. 15, офис 201</p>
+               <p class="content-section__text">График работы: Пн-Пт с 9:00 до 18:00</p>
           </section>
-          <section>
-               <h2>Обратная связь</h2>
-               <p>Напишите нам, и мы ответим в кратчайшие сроки в рамках рабочего времени!</p>
-               <p>При необходимости экстренной консультации используйте телефон или email.</p>
+          <section class="content-section">
+               <h2 class="content-section__title">Обратная связь</h2>
+               <p class="content-section__text">Напишите нам, и мы ответим в кратчайшие сроки в рамках рабочего времени!</p>
+               <p class="content-section__text">При необходимости экстренной консультации используйте телефон или email.</p>
           </section>
      </main>
 
-     <footer>
-          <p>&copy; 2023 Наименование организации. Все права сохранены.</p>
-          <p>Телефон: +7 (123) 456-78-90</p>
+     <footer class="footer">
+          <p class="footer__text">&copy; 2023 Наименование организации. Все права сохранены.</p>
+          <p class="footer__text">Телефон: +7 (123) 456-78-90</p>
      </footer>
 </body>
 
