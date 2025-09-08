@@ -4,4 +4,4 @@
 Этот репозиторий является каркасом для будущего веб-приложения.
 
 ## Ссылки
-- [Публичная страница на GitHub Pages](https://github.com/m1yamoto11/practice)
+- [Публичная страница на GitHub Pages](https://m1yamoto11.github.io/practice/src/)
