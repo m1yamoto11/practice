@@ -1,0 +1,172 @@
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+.header {
+    background: white;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.nav__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav__list li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.nav__link {
+    text-decoration: none;
+    color: blue;
+}
+
+.nav__link:hover {
+    text-decoration: underline;
+}
+
+.nav__link--active {
+    color: darkblue;
+    font-weight: bold;
+}
+
+.main {
+    background: white;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.main__title {
+    color: black;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.main__text {
+    margin-bottom: 10px;
+    color: #666;
+}
+
+.footer {
+    text-align: center;
+    color: #999;
+    font-size: 14px;
+}
+
+.footer__text {
+    margin: 5px 0;
+}
+
+.breadcrumb {
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #999;
+}
+
+.breadcrumb__link {
+    color: blue;
+    text-decoration: none;
+}
+
+.breadcrumb__link:hover {
+    text-decoration: underline;
+}
+
+.breadcrumb__current {
+    color: black;
+}
+
+.content-section {
+    margin-bottom: 20px;
+    padding: 15px;
+    background: #f9f9f9;
+    border-left: 3px solid blue;
+}
+
+.content-section__title {
+    margin: 0 0 10px 0;
+    color: black;
+    font-size: 18px;
+}
+
+.content-section__text {
+    margin-bottom: 5px;
+    color: #666;
+}
+
+.button {
+    padding: 10px 20px;
+    border: none;
+    background: blue;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.button:hover {
+    background: darkblue;
+}
+
+.button--secondary {
+    background: gray;
+}
+
+.button--secondary:hover {
+    background: darkgray;
+}
+
+.dialog {
+    padding: 20px;
+    border: 1px solid #ccc;
+    background: white;
+    max-width: 400px;
+}
+
+.dialog__title {
+    margin: 0 0 20px 0;
+    color: black;
+    text-align: center;
+}
+
+.form__label {
+    display: block;
+    margin: 10px 0 5px 0;
+    font-weight: bold;
+    color: black;
+}
+
+.form__input,
+.form__select,
+.form__textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.form__input:focus,
+.form__select:focus,
+.form__textarea:focus {
+    border-color: blue;
+}
+
+.form__help {
+    font-size: 12px;
+    color: #999;
+    margin-top: 5px;
+}
+
+.form__actions {
+    margin-top: 20px;
+}
+
+.form__actions .button {
+    margin-right: 10px;
+}
+
