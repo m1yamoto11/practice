@@ -2,137 +2,72 @@ const dialog = document.getElementById('contactDialog');
 const openBtn = document.getElementById('openDialog');
 const closeBtn = document.getElementById('closeDialog');
 const form = document.getElementById('contactForm');
+const phoneInput = document.getElementById('phone');
 
-let lastActiveElement = null;
-
-openBtn.addEventListener('click', () => {
-    lastActiveElement = document.activeElement;
+openBtn.addEventListener('click', function() {
     dialog.showModal();
-
-    const firstInput = dialog.querySelector('input, select, textarea, button');
-    if (firstInput) {
-        firstInput.focus();
-    }
 });
 
-closeBtn.addEventListener('click', () => {
-    dialog.close('cancel');
+closeBtn.addEventListener('click', function() {
+    dialog.close();
 });
 
-dialog.addEventListener('close', () => {
-    if (lastActiveElement) {
-        lastActiveElement.focus();
-    }
-});
-
-form?.addEventListener('submit', (e) => {
+form.addEventListener('submit', function(e) {
     e.preventDefault();
-
-    [...form.elements].forEach(element => {
-        if (element.setCustomValidity) {
-            element.setCustomValidity('');
-        }
-    });
-
-    if (!form.checkValidity()) {
-        const email = form.elements.email;
-        const phone = form.elements.phone;
-        const name = form.elements.name;
-        const topic = form.elements.topic;
-        const message = form.elements.message;
-
-        if (email?.validity.typeMismatch) {
-            email.setCustomValidity('Введите корректный e-mail, например: name@example.com');
-        } else if (email?.validity.valueMissing) {
-            email.setCustomValidity('Поле E-mail обязательно для заполнения');
-        }
-
-        if (phone?.validity.patternMismatch) {
-            phone.setCustomValidity('Используйте формат: +7 (900) 000-00-00');
-        } else if (phone?.validity.valueMissing) {
-            phone.setCustomValidity('Поле Телефон обязательно для заполнения');
-        }
-
-        if (name?.validity.tooShort) {
-            name.setCustomValidity('Имя должно содержать минимум 2 символа');
-        } else if (name?.validity.valueMissing) {
-            name.setCustomValidity('Поле Имя обязательно для заполнения');
-        }
-
-        if (topic?.validity.valueMissing) {
-            topic.setCustomValidity('Выберите тему обращения');
-        }
-
-        if (message?.validity.valueMissing) {
-            message.setCustomValidity('Поле Сообщение обязательно для заполнения');
-        }
-
-        form.reportValidity();
-
-        [...form.elements].forEach(element => {
-            if (element.willValidate) {
-                element.toggleAttribute('aria-invalid', !element.checkValidity());
-            }
-        });
-
+    
+    const name = form.name.value;
+    const email = form.email.value;
+    const phone = form.phone.value;
+    const topic = form.topic.value;
+    const message = form.message.value;
+    
+    if (!name) {
+        alert('Введите имя');
         return;
     }
-
-    alert('Форма успешно отправлена! Мы свяжемся с вами в ближайшее время.');
-
-    dialog.close('success');
+    if (!email) {
+        alert('Введите email');
+        return;
+    }
+    if (!phone) {
+        alert('Введите телефон');
+        return;
+    }
+    if (!topic) {
+        alert('Выберите тему');
+        return;
+    }
+    if (!message) {
+        alert('Введите сообщение');
+        return;
+    }
+    
+    alert('Форма отправлена!');
+    dialog.close();
     form.reset();
-
-    [...form.elements].forEach(element => {
-        element.removeAttribute('aria-invalid');
-    });
 });
 
-const phoneInput = document.getElementById('phone');
-phoneInput?.addEventListener('input', () => {
-    const digits = phoneInput.value.replace(/\D/g, '').slice(0, 11);
-
-    const normalizedDigits = digits.replace(/^8/, '7');
-
-    const parts = [];
-
-    if (normalizedDigits.length > 0) {
-        parts.push('+7');
+phoneInput.addEventListener('input', function() {
+    let value = phoneInput.value.replace(/[^0-9]/g, '');
+    if (value.length > 11) {
+        value = value.slice(0, 11);
     }
-    if (normalizedDigits.length > 1) {
-        parts.push(' (' + normalizedDigits.slice(1, 4));
+    
+    if (value.length >= 1) {
+        value = '+7 ' + value.slice(1);
     }
-    if (normalizedDigits.length >= 4) {
-        parts[parts.length - 1] += ')';
+    if (value.length >= 6) {
+        value = value.slice(0, 5) + '(' + value.slice(5);
     }
-    if (normalizedDigits.length >= 5) {
-        parts.push(' ' + normalizedDigits.slice(4, 7));
+    if (value.length >= 10) {
+        value = value.slice(0, 9) + ')' + value.slice(9);
     }
-    if (normalizedDigits.length >= 8) {
-        parts.push('-' + normalizedDigits.slice(7, 9));
+    if (value.length >= 14) {
+        value = value.slice(0, 13) + '-' + value.slice(13);
     }
-    if (normalizedDigits.length >= 10) {
-        parts.push('-' + normalizedDigits.slice(9, 11));
+    if (value.length >= 17) {
+        value = value.slice(0, 16) + '-' + value.slice(16);
     }
-
-    phoneInput.value = parts.join('');
-});
-
-dialog.addEventListener('cancel', (e) => {
-    const formData = new FormData(form);
-    let hasData = false;
-
-    for (let [key, value] of formData.entries()) {
-        if (value.toString().trim()) {
-            hasData = true;
-            break;
-        }
-    }
-
-    if (hasData) {
-        const shouldClose = confirm('Вы уверены, что хотите закрыть форму? Введенные данные будут потеряны.');
-        if (!shouldClose) {
-            e.preventDefault();
-        }
-    }
+    
+    phoneInput.value = value;
 });
