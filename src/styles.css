@@ -202,6 +202,28 @@ body {
     margin-top: 5px;
 }
 
+.form__error {
+    display: block;
+    font-size: 12px;
+    color: #dc3545;
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+.form__input--error,
+.form__select--error,
+.form__textarea--error {
+    border-color: #dc3545 !important;
+    background-color: #fff5f5 !important;
+}
+
+.form__input--error:focus,
+.form__select--error:focus,
+.form__textarea--error:focus {
+    background-color: #ffebee !important;
+    color: black !important;
+}
+
 .form__actions {
     margin-top: 25px;
     text-align: center;
